@@ -1,0 +1,43 @@
+/* app css stylesheet */
+
+.menu {
+    list-style: none;
+    border-bottom: 0.1em solid black;
+    margin-bottom: 2em;
+    padding: 0 0 0.5em;
+}
+
+.menu:before {
+    content: "[";
+}
+
+.menu:after {
+    content: "]";
+}
+
+.menu>li {
+    display: inline;
+}
+
+.menu>li+li:before {
+    content: "|";
+    padding-right: 0.3em;
+}
+
+.reminder-form {
+    align-self: center;
+    background-color: #f1cccc;
+    width: 300px;
+    border: 9px solid rgba(0, 0, 0, 0.43);
+    padding: 25px;
+    margin: 25px;
+}
+
+.close {
+    margin-left: 100%;
+    color:black;
+}
+.input
+{
+      margin-bottom: 5%;
+}

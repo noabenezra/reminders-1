@@ -1,0 +1,29 @@
+<div>
+    <ul ng-repeat="reminder in vm.arrayOfReminders">
+        <li>
+            <span> {{reminder.Title}} , </span>
+            <span>  {{reminder.Description}} ,</span>
+            <span>  {{reminder.DueDate}} ,</span>
+            <span>   {{reminder.Counter}} </span>
+            <button ng-click="vm.editReminder(reminder.Counter)">Edit</button>
+        </li>
+        <div ng-if="vm.clickedEdit==true">
+            <form class="reminder-form" ng-submit="vm.saveEditReminder(reminder.Counter)">
+                <a href="#close" title="Close" class="close">X</a>
+                <div class="input">
+                    <label>Title:</label>
+                    <input type="text" ng-model="vm.title" placeholder="Title" required/>
+                </div>
+                <div class="input">
+                    <label>Description:</label>
+                    <input type="text" ng-model="vm.description" placeholder="Description" required/>
+                </div>
+                <div class="input">
+                    <label>Due Date:</label>
+                    <input type="date" ng-model="vm.duedate" placeholder="Date" required/>
+                </div>
+                <button class="btn" type="submit">Save</button>               
+            </form>
+        </div>
+    </ul>
+</div>

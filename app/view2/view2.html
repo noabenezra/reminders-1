@@ -1,0 +1,16 @@
+
+ <div>
+ <form   ng-submit="vm.newReminder()">
+            <label>Title:</label>
+            <input type="text" ng-model="vm.title" placeholder="Title" required/>
+            <br/>  <br/>
+            <label>Description:</label>
+            <input type="text" ng-model="vm.description" placeholder="Description" required/>
+            <br/>  <br/>
+            <label>Due Date:</label>
+            <input type="date" ng-model="vm.duedate" placeholder="Date" required/>
+
+            <br/><br/>
+            <button class="btn" type="submit">Save</button>
+</form>
+</div>
