@@ -1,5 +1,3 @@
-/* app css stylesheet */
-
 .menu {
     list-style: none;
     border-bottom: 0.1em solid black;
@@ -35,9 +33,41 @@
 
 .close {
     margin-left: 100%;
-    color:black;
+    color: black;
 }
-.input
+
+.input {
+    margin-bottom: 5%;
+}
+
+.new-reminder {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+.details {
+    margin-bottom: 15px;
+}
+
+.title-reminder {
+    float: left;
+    width: 107px;
+}
+
+.input-reminder {
+    width: 35%;
+        padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.btn
 {
-      margin-bottom: 5%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 2px 13px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 519px;
 }

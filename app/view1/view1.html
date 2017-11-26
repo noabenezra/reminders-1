@@ -6,6 +6,7 @@
             <span>  {{reminder.DueDate}} ,</span>
             <span>   {{reminder.Counter}} </span>
             <button ng-click="vm.editReminder(reminder.Counter)">Edit</button>
+
         </li>
         <div ng-if="vm.clickedEdit==true">
             <form class="reminder-form" ng-submit="vm.saveEditReminder(reminder.Counter)">
@@ -22,7 +23,7 @@
                     <label>Due Date:</label>
                     <input type="date" ng-model="vm.duedate" placeholder="Date" required/>
                 </div>
-                <button class="btn" type="submit">Save</button>               
+                <button class="btn" type="submit">Save</button>
             </form>
         </div>
     </ul>

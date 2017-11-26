@@ -16,6 +16,7 @@ app.service('reminderServer', function () {
   var counter=0;
   this.addNewReminder = function (title, description, dueDate)
    { 
+     debugger;
     this.reminders.push({ Title: title, Description: description, DueDate: dueDate, Counter: counter });
     counter++;
     var myJSON = JSON.stringify(this.reminders);
@@ -28,6 +29,7 @@ app.controller('View2Ctrl', function (reminderServer) {
   vm.newReminder = newReminder;
   function newReminder()
    {
+       debugger;
     reminderServer.addNewReminder(vm.title, vm.description, vm.duedate);
     vm.title = '';
     vm.description = '';
