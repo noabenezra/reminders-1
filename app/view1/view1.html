@@ -1,16 +1,20 @@
-<div>
-    <ul ng-repeat="reminder in vm.arrayOfReminders">
-        <li>
-            <span> {{reminder.Title}} , </span>
+<div class="new-reminder">
+  <div >
+       <ul class="list-group" ng-repeat="reminder in vm.arrayOfReminders">
+        <li class="list-group-item list-items">
+            <span > {{reminder.Title}} , </span>
             <span>  {{reminder.Description}} ,</span>
             <span>  {{reminder.DueDate}} ,</span>
             <span>   {{reminder.ReminderId}} </span>
-           
-            <button >
+            <span >   <button class="btn btn-primary">
                 <a ng-click="vm.editReminder(reminder.ReminderId)">edit</a>
-                </button>
+                </button> </span>
+
+           
 
         </li>
 
     </ul>
+  </div>
 </div>
+

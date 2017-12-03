@@ -1,17 +1,18 @@
 <div class="new-reminder">
     <form ng-submit="vm.newReminder()">
-        <div class="details">
+        <div class="form-group">
             <span class="title-reminder"><label>Title:</label></span>
-            <span ><input class="input-reminder" type="text" ng-model="vm.reminder.title" placeholder="Title" required/></span>
+            <span ><input class="form-control" type="text" ng-model="vm.reminder.title" placeholder="Title" required/></span>
         </div>
-        <div class="details">
+        <div class="form-group">
             <span class="title-reminder"><label>Description:</label></span>
-            <span><input  class="input-reminder" type="text" ng-model="vm.reminder.description" placeholder="Description" required/></span>
+            <span><input  class="form-control" type="text" ng-model="vm.reminder.description" placeholder="Description" required/></span>
         </div>
-        <div class="details">
+        <div class="form-group">
             <span class="title-reminder"> <label>Due Date:</label></span>
-            <span><input  class="input-reminder" type="date" ng-model="vm.reminder.duedate" placeholder="Date" required/></span>
+            <span><input  class="form-control" type="date" ng-model="vm.reminder.duedate" placeholder="Date" required/></span>
         </div>
-        <button class="btn" type="submit">Save</button>
+        <button class="btn btn-primary" type="submit">Save</button>
     </form>
 </div>
+
