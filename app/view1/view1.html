@@ -5,7 +5,10 @@
             <span>  {{reminder.Description}} ,</span>
             <span>  {{reminder.DueDate}} ,</span>
             <span>   {{reminder.Counter}} </span>
-            <button ng-click="vm.editReminder(reminder.Counter)">Edit</button>
+           
+            <button >
+                <a ng-click="vm.editReminder(reminder.Counter)">edit</a>
+                </button>
 
         </li>
         <div ng-if="vm.clickedEdit==true">

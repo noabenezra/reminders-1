@@ -1,16 +1,22 @@
 'use strict';
 
-var app = angular.module('myApp.view1', ['ngRoute'])
+var app = angular.module('view1', ['ui.router'])
 
-  app.config(['$routeProvider', function ($routeProvider) {
-    $routeProvider.when('/view1', {
-      templateUrl: 'view1/view1.html',
-      controller: 'View1Ctrl as vm'
-  });
+  app.config(['$stateProvider', function ($stateProvider) { debugger; 
+      $stateProvider.state('view1', 
+      {
+            url: '/view1',       
+            templateUrl: 'view1/view1.html',
+            controller: 'View1Ctrl as vm'
+        });
+
+
+
 }])
 
 
-  app.controller('View1Ctrl', [function () {
+
+  app.controller('View1Ctrl', ['$state' ,function ($state) {debugger;
     var vm = this;
     vm.clickedEdit = false;
     vm.editReminder = editReminder;
@@ -19,16 +25,18 @@ var app = angular.module('myApp.view1', ['ngRoute'])
     vm.arrayOfReminders = JSON.parse(text);
 
     function editReminder(counterReminder) {debugger;
-     /* vm.clickedEdit = true;
+
+
+      vm.clickedEdit = true;
       debugger;
      
       if (counterReminder == vm.arrayOfReminders[counterReminder].Counter) {
         vm.title = vm.arrayOfReminders[counterReminder].Title;
         vm.description = vm.arrayOfReminders[counterReminder].Description;
         vm.duedate = new Date(vm.arrayOfReminders[counterReminder].DueDate);
-      }*/
+      }
 
-     // $state.go('myApp.view2', { counterReminder: counterReminder })
+      $state.go('view2', { counterReminder: counterReminder });
     };
 
     function saveEditReminder(counterReminder) {
@@ -44,13 +52,4 @@ var app = angular.module('myApp.view1', ['ngRoute'])
 
   }]);
 
-    /*  $stateProvider.state('myApp.view2', {
-            url: '/groups/:counterReminder',
-            views: {
-                'content': {
-                    templateUrl: 'app/view2/view2.html',
-                    controller: 'View2Ctrl as vm'
-                }
-            }
-        });
-  }])*/
+   
