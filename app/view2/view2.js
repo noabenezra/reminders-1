@@ -22,7 +22,7 @@ app.service('reminderServer', function ($http) {
   
   this.addOrUpdateNewReminder = function (title, description, dueDate, newReminderId) {
     debugger;
-    if (newReminderId != null) {
+    /*if (newReminderId != null) {
       this.reminders[newReminderId].Title = title;
       this.reminders[newReminderId].Description = description;
       this.reminders[newReminderId].DueDate = dueDate;
@@ -31,7 +31,7 @@ app.service('reminderServer', function ($http) {
       this.reminders.push({ Title: title, Description: description, DueDate: dueDate, ReminderId: this.reminderId });
       this.reminderId++;
     }
-    localStorage.setItem("testJSON", JSON.stringify(this.reminders));
+    localStorage.setItem("testJSON", JSON.stringify(this.reminders));*/
     /*$http({
       method: 'GET',
       url: '//localhost/Reminders/api/values/5',
@@ -40,7 +40,14 @@ app.service('reminderServer', function ($http) {
      
     }, function errorCallback(response) {
     });*/
-
+    $http({
+      method: 'POST',
+      url: '//localhost/Reminders/api/values',
+      params:{title: title, description: description, dueDate:dueDate}
+    }).then(function successCallback(response) {debugger;
+     
+    }, function errorCallback(response) {
+    });
 
 
   }
