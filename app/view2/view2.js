@@ -22,16 +22,7 @@ app.service('reminderServer', function ($http) {
   
   this.addOrUpdateNewReminder = function (title, description, dueDate, newReminderId) {
     debugger;
-    /*if (newReminderId != null) {
-      this.reminders[newReminderId].Title = title;
-      this.reminders[newReminderId].Description = description;
-      this.reminders[newReminderId].DueDate = dueDate;
-    }
-    else {
-      this.reminders.push({ Title: title, Description: description, DueDate: dueDate, ReminderId: this.reminderId });
-      this.reminderId++;
-    }
-    localStorage.setItem("testJSON", JSON.stringify(this.reminders));*/
+  
     /*$http({
       method: 'GET',
       url: '//localhost/Reminders/api/values/5',
