@@ -11,31 +11,23 @@ app.config(['$stateProvider', function ($stateProvider) {
     });
 }])
 
-app.service('hexafy', function() {
-  this.myFunc = function (x) {
-      return x.toString(16);
-  }
-});
-
-app.controller('RemindersListCtrl', function ($state, hexafy,reminderServer) {
+app.controller('RemindersListCtrl', function ($state,reminderServer) {
   var vm = this;
   vm.listOfReminders=[];
-  vm.reminder = { title: "", description: "", duedate: "", reminderId: null };
   vm.editReminder = editReminder;
 
   init();
   function init() {
-    debugger;
     reminderServer.getReminders().then(function (resp) {
-      debugger;
       vm.listOfReminders = resp.data;
   });
-  // vm.hex = hexafy.myFunc(255);
+
   }
 
 
 
-  function editReminder(reminderId) {
+  function editReminder(reminderId) {debugger;
+    debugger;
     $state.go('addAReminder', { reminderId: reminderId });
   };
 

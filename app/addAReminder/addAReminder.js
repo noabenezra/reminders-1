@@ -52,7 +52,7 @@ app.service('reminderServer', function ($http, $mdToast, $q) {
 
 
 
-app.controller('AddAReminderCtrl', function (reminderServer) {
+app.controller('AddAReminderCtrl', function (reminderServer, $stateParams) {
   var vm = this;
   vm.reminderId = null;
   vm.reminder = { title: "", description: "", duedate: "" };
@@ -64,6 +64,13 @@ app.controller('AddAReminderCtrl', function (reminderServer) {
 
   init();
   function init() {
+    debugger;
+    if ($stateParams.reminderId) {
+      vm.reminderId = $stateParams.reminderId;
+      vm.reminder.title = vm.listOfReminders[vm.reminderId].Title;
+      vm.reminder.description = vm.listOfReminders[vm.reminderId].Description;
+      vm.reminder.duedate = new Date(vm.listOfReminders[vm.reminderId].DueDate);
+    }
     debugger;
   }
 
