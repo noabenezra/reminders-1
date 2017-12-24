@@ -15,7 +15,6 @@ app.config(['$stateProvider', function ($stateProvider) {
 
 
 app.service('reminderServer', function ($http, $mdToast, $q) {
-  debugger;
 
   this.addOrUpdateNewReminder = function (title, description, dueDate) {
     $http({
@@ -29,24 +28,36 @@ app.service('reminderServer', function ($http, $mdToast, $q) {
   }
 
   this.getReminders = function () {
-    debugger;
     var defer = $q.defer();
-
-
     $http({
       method: 'GET',
       url: '//localhost/Reminders/api/values',
       /* params:{title: title, description: description, dueDate:dueDate}*/
     }).then(function successCallback(response) {
-      debugger;
       defer.resolve(response);
-
     }, function errorCallback(response) {
       defer.reject(response);
-
     });
     return defer.promise;
   }
+
+  this.getReminder = function (reminderId) {
+    var defer = $q.defer();
+    $http({
+      method: 'GET',
+      url: '//localhost/Reminders/api/values/5',
+      params: { reminderId: reminderId }
+    }).then(function successCallback(response) {
+      defer.resolve(response);
+    }, function errorCallback(response) {
+      defer.reject(response);
+    });
+    return defer.promise;
+  }
+
+
+
+
 
 });
 
@@ -65,11 +76,14 @@ app.controller('AddAReminderCtrl', function (reminderServer, $stateParams) {
   init();
   function init() {
     debugger;
-    if ($stateParams.reminderId) {
+    if ($stateParams.reminderId ) {
       vm.reminderId = $stateParams.reminderId;
-      vm.reminder.title = vm.listOfReminders[vm.reminderId].Title;
-      vm.reminder.description = vm.listOfReminders[vm.reminderId].Description;
-      vm.reminder.duedate = new Date(vm.listOfReminders[vm.reminderId].DueDate);
+      reminderServer.getReminder(vm.reminderId).then(function (resp) {
+        debugger;
+        vm.reminder.title = resp.data.Title;
+        vm.reminder.description = resp.data.Description;
+        vm.reminder.duedate = new Date(resp.data.DueDate);
+      });
     }
     debugger;
   }
