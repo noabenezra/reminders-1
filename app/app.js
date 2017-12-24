@@ -7,9 +7,7 @@ angular.module('myApp', [
   'myApp.version',
   'ui.router'
 ]).
-config(['$locationProvider', '$stateProvider','$urlRouterProvider', function($locationProvider, $stateProvider,$urlRouterProvider) {debugger;
-  $locationProvider.hashPrefix('!');
-
- $urlRouterProvider.otherwise("/view1");
- //$routeProvider.otherwise({redirectTo: '/view1'});
-}]);
+  config(['$locationProvider', '$stateProvider', '$urlRouterProvider', function ($locationProvider, $stateProvider, $urlRouterProvider) {
+    $locationProvider.hashPrefix('!');
+    $urlRouterProvider.otherwise("/view1");
+  }]);

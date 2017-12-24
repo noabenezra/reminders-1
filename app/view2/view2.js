@@ -3,7 +3,6 @@
 var app = angular.module('view2', ['ui.router', 'view1'])
 
 app.config(['$stateProvider', function ($stateProvider) {
-  debugger;
   $stateProvider.state('view2',
     {
       url: '/view2/:reminderId',
@@ -16,27 +15,25 @@ app.config(['$stateProvider', function ($stateProvider) {
 
 
 app.service('reminderServer', function ($http) {
-  debugger;
   this.reminderId = 0;
   this.reminders = JSON.parse(localStorage.getItem("testJSON"));
-  
+
   this.addOrUpdateNewReminder = function (title, description, dueDate, newReminderId) {
-    debugger;
-  
+
     /*$http({
       method: 'GET',
       url: '//localhost/Reminders/api/values/5',
       params:{title: title, description: description, dueDate:dueDate}
-    }).then(function successCallback(response) {debugger;
+    }).then(function successCallback(response) {
      
     }, function errorCallback(response) {
     });*/
     $http({
       method: 'POST',
       url: '//localhost/Reminders/api/values',
-      params:{title: title, description: description, dueDate:dueDate}
-    }).then(function successCallback(response) {debugger;
-     
+      params: { title: title, description: description, dueDate: dueDate }
+    }).then(function successCallback(response) {
+
     }, function errorCallback(response) {
     });
 
@@ -47,10 +44,9 @@ app.service('reminderServer', function ($http) {
 
 
 app.controller('View2Ctrl', function (reminderServer, $stateParams) {
-  debugger;
   var vm = this;
   vm.reminderId = null;
-   vm.reminder={ title:"", description:"", duedate:"", reminderId:null };
+  vm.reminder = { title: "", description: "", duedate: "", reminderId: null };
   var text = localStorage.getItem("testJSON");
   vm.arrayOfReminders = JSON.parse(text);
 
