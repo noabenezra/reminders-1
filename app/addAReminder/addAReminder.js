@@ -16,16 +16,19 @@ app.config(['$stateProvider', function ($stateProvider) {
 
 app.service('reminderServer', function ($http, $mdToast, $q) {
 
-  this.addOrUpdateNewReminder = function (title, description, dueDate) {
-    $http({
-      method: 'POST',
-      url: '//localhost/Reminders/api/values',
-      params: { title: title, description: description, dueDate: dueDate }
-    }).then(function successCallback(response) {
-      $mdToast.show($mdToast.simple().textContent('Reminder has been added!'));
-    }, function errorCallback(response) {
-    });
-  }
+   this.deleteReminder = function (reminderId) {debugger;  
+    var defer = $q.defer();
+     $http({
+       method: 'POST',
+       url: '//localhost/Reminders/api/values/7',
+       params: { reminderId: reminderId}
+     }).then(function successCallback(response) {debugger;
+      defer.resolve(response);
+     }, function errorCallback(response) {
+      defer.reject(response);
+     });
+     return defer.promise;
+   }
 
   this.getReminders = function () {
     var defer = $q.defer();
@@ -55,7 +58,21 @@ app.service('reminderServer', function ($http, $mdToast, $q) {
     return defer.promise;
   }
 
-
+  this.addOrUpdateAReminder = function (reminderId, title, description, dueDate) {
+    debugger;
+    var defer = $q.defer();
+    $http({
+      method: 'POST',
+      url: '//localhost/Reminders/api/values/update',
+      params: { reminderId: reminderId, title: title, description: description, dueDate: dueDate }
+    }).then(function successCallback(response) {
+      debugger;
+      defer.resolve(response);
+    }, function errorCallback(response) {
+      defer.reject(response);
+    });
+    return defer.promise;
+  }
 
 
 
@@ -63,33 +80,35 @@ app.service('reminderServer', function ($http, $mdToast, $q) {
 
 
 
-app.controller('AddAReminderCtrl', function (reminderServer, $stateParams) {
+app.controller('AddAReminderCtrl', function (reminderServer, $stateParams, $mdToast) {
   var vm = this;
   vm.reminderId = null;
   vm.reminder = { title: "", description: "", duedate: "" };
-
-
-  debugger;
-
   vm.newReminder = newReminder;
-
   init();
+
   function init() {
-    debugger;
-    if ($stateParams.reminderId ) {
+    if ($stateParams.reminderId) {
       vm.reminderId = $stateParams.reminderId;
       reminderServer.getReminder(vm.reminderId).then(function (resp) {
-        debugger;
         vm.reminder.title = resp.data.Title;
         vm.reminder.description = resp.data.Description;
         vm.reminder.duedate = new Date(resp.data.DueDate);
       });
     }
-    debugger;
   }
 
   function newReminder() {
-    reminderServer.addOrUpdateNewReminder(vm.reminder.title, vm.reminder.description, vm.reminder.duedate);
+    if ($stateParams.reminderId) {
+      reminderServer.addOrUpdateAReminder($stateParams.reminderId, vm.reminder.title, vm.reminder.description, vm.reminder.duedate).then(function (resp) {
+        $mdToast.show($mdToast.simple().textContent('Reminder has been Edited!'));
+      });
+    }
+    else {
+      reminderServer.addOrUpdateAReminder(null, vm.reminder.title, vm.reminder.description, vm.reminder.duedate).then(function (resp) {
+        $mdToast.show($mdToast.simple().textContent('Reminder has been added!'));
+      });
+    }
     vm.reminder.title = '';
     vm.reminder.description = '';
     vm.reminder.duedate = '';
