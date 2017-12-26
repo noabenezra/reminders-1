@@ -38,11 +38,18 @@
 
 .input {
     margin-bottom: 5%;
+    font-family: 'Kaushan Script', cursive;
 }
 
 .new-reminder {
     border-radius: 5px;
     padding: 20px;
+    border: solid;
+    margin-top: 70px;
+    border: .75rem solid #fff;
+    transition: border 0.6s ease-out;
+    background-color: #e4e4e6;
+    font-family: 'Kaushan Script', cursive;
 }
 
 .container {
@@ -50,10 +57,20 @@
     padding: 20px;
     position: relative;
 }
+
 .reminder-list {
-    width: 700px;
-    right: 35%;
     position: absolute;
+    float: left;
+    width: 100%;
+    border-radius: 5px;
+    padding: 20px;
+    border: solid;
+    margin-top: 70px;
+    border: .75rem solid #fff;
+    transition: border 0.6s ease-out;
+    background-color: #e4e4e6;
+    font-family: 'Kaushan Script', cursive;
+   
 }
 
 .details {
@@ -73,11 +90,15 @@
 }
 
 .btn {
-    margin-left: 95%;
+    margin-left: 94%;
+    font-family: 'Kaushan Script', cursive;
 }
 
 .list-items-position {
     position: relative;
+
+    background-color: #e4e4e6;
+    padding: .75rem 1.25rem;
 }
 
 .btns-position {
@@ -91,7 +112,7 @@
 .begin {
     padding: 0;
     margin: 0;
-    font-family: "DomaineText",Georgia,serif;
+    font-family: 'Kaushan Script', cursive;
     font-weight: normal;
     line-height: 1.5;
     color: #443235;
@@ -108,11 +129,10 @@
     box-sizing: border-box;
 }
 
-
-.tagline{
+.tagline {
     word-spacing: 0.05rem;
     margin-top: .375rem;
-    font-family: "DomaineText",Georgia,serif;
+    font-family: 'Kaushan Script', cursive;
     font-weight: normal;
     font-style: normal;
     font-size: .8125rem;
@@ -124,10 +144,8 @@
     padding: 0;
     font-size: 100%;
     box-sizing: border-box;
-    
+    margin-top: 62px;
 }
-
-
 
 nav {
     margin-top: 2.25rem;
@@ -137,11 +155,25 @@ nav {
     padding-bottom: .875rem;
 }
 
-article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
     display: block;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
     box-sizing: inherit;
 }
 
@@ -149,16 +181,19 @@ nav ul {
     list-style-type: none;
     text-align: center;
     margin: 0;
-    
 }
 
-ul, ol, dl {
+ul,
+ol,
+dl {
     line-height: 1.5;
     margin-bottom: 1rem;
     list-style-position: outside;
 }
 
-ul, menu, dir {
+ul,
+menu,
+dir {
     display: block;
     list-style-type: disc;
     -webkit-margin-before: 1em;
@@ -177,20 +212,24 @@ nav ul li {
     display: inline-block;
     padding-left: .5rem;
     padding-right: .5rem;
-    font-family: "DomaineText",Georgia,serif;
+    font-family: 'Kaushan Script', cursive;
     font-weight: normal;
     font-style: normal;
-    font-size: 1rem;
+    font-size: 24px;
     line-height: 2.2;
     letter-spacing: 0;
     text-transform: none;
     text-align: center;
 }
+
 li {
     font-size: inherit;
     padding: 0;
 }
-nav ul li a.current, nav ul li a.current:hover, nav ul li a.current:focus {
+
+nav ul li a.current,
+nav ul li a.current:hover,
+nav ul li a.current:focus {
     color: #886469;
     border: none;
 }
@@ -209,10 +248,7 @@ a {
     line-height: inherit;
     cursor: pointer;
     background-color: transparent;
-
 }
-
-
 
 .row {
     max-width: 70.5rem !important;
@@ -228,10 +264,25 @@ a {
     width: 100%;
 }
 
-header div.tagline a, header div.tagline a:hover, header div.tagline a:focus {
+header div.tagline a,
+header div.tagline a:hover,
+header div.tagline a:focus {
     color: #443235;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
     box-sizing: inherit;
+}
+
+.view {
+    float: left;
+    padding-left: 13.5rem;
+    padding-right: 13.5rem;
+    width: 100%;
+}
+
+.text-style {
+    font-family: 'Kaushan Script', cursive;
 }

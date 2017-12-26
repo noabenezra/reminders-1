@@ -1,16 +1,28 @@
 <div class="container">
   <div class="reminder-list">
     <div class="list-group" ng-repeat="reminder in vm.listOfReminders">
-      <div class="list-group-item list-items list-items-position">
-        <span> {{reminder.Title}} , </span>
-        <span> {{reminder.Description}} ,</span>
-        <span> {{reminder.DueDate}} ,</span>
-        <span> {{reminder.ReminderId}} </span>
+      <div class="list-items list-items-position">
+        <div> 
+          <label>
+            Title:
+          </label>
+          {{reminder.Title}}  </div>
+        <div> 
+            <label>
+                Description:
+              </label>
+          {{reminder.Description}} </div>
+
+        <div>    <label>
+            DueDate:
+          </label>
+          {{reminder.DueDate}} </div>
+      
         <span class="btns-position">
-          <button class="btn-primary">
+          <button class="btn-primary text-style">
             <a ng-click="vm.editReminder(reminder.ReminderID)">Edit</a>
           </button>
-          <button class=" btn-primary">
+          <button class="btn-primary text-style">
             <a ng-click="vm.deleteReminder(reminder.ReminderID)">Delete</a>
           </button>
         </span>
