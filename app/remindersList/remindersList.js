@@ -28,7 +28,7 @@ app.controller('RemindersListCtrl', function ($state, reminderServer, $mdToast) 
   function editReminder(reminderId) {
     debugger;
     debugger;
-    $state.go('addAReminder', { reminderId: reminderId });
+    $state.go('addAReminderWithId', { reminderId: reminderId });
   };
 
   function deleteReminder(reminderId) {

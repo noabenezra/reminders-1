@@ -22,15 +22,6 @@
     padding-right: 0.3em;
 }
 
-.reminder-form {
-    align-self: center;
-    background-color: #f1cccc;
-    width: 300px;
-    border: 9px solid rgba(0, 0, 0, 0.43);
-    padding: 25px;
-    margin: 25px;
-}
-
 .close {
     margin-left: 100%;
     color: black;
@@ -38,7 +29,7 @@
 
 .input {
     margin-bottom: 5%;
-    font-family: 'Kaushan Script', cursive;
+    font-family: 'Handlee', cursive;
 }
 
 .new-reminder {
@@ -49,7 +40,7 @@
     border: .75rem solid #fff;
     transition: border 0.6s ease-out;
     background-color: #e4e4e6;
-    font-family: 'Kaushan Script', cursive;
+    font-family: 'Handlee', cursive;
 }
 
 .container {
@@ -59,7 +50,7 @@
 }
 
 .reminder-list {
-    position: absolute;
+  
     float: left;
     width: 100%;
     border-radius: 5px;
@@ -69,8 +60,7 @@
     border: .75rem solid #fff;
     transition: border 0.6s ease-out;
     background-color: #e4e4e6;
-    font-family: 'Kaushan Script', cursive;
-   
+    font-family: 'Handlee', cursive;
 }
 
 .details {
@@ -78,8 +68,9 @@
 }
 
 .title-reminder {
-    float: left;
     width: 107px;
+    font-weight: 600;
+    font-size: 20px;
 }
 
 .input-reminder {
@@ -91,12 +82,11 @@
 
 .btn {
     margin-left: 94%;
-    font-family: 'Kaushan Script', cursive;
+    font-family: 'Handlee', cursive;
 }
 
 .list-items-position {
     position: relative;
-
     background-color: #e4e4e6;
     padding: .75rem 1.25rem;
 }
@@ -112,7 +102,7 @@
 .begin {
     padding: 0;
     margin: 0;
-    font-family: 'Kaushan Script', cursive;
+    font-family: 'Handlee', cursive;
     font-weight: normal;
     line-height: 1.5;
     color: #443235;
@@ -121,10 +111,6 @@
     -moz-osx-font-smoothing: grayscale;
     font-kerning: normal;
     font-variant-numeric: oldstyle-nums;
-    -moz-font-feature-settings: "onum", "kern", "liga", "clig", "calt";
-    -ms-font-feature-settings: "onum", "kern", "liga", "clig", "alt";
-    -webkit-font-feature-settings: "onum", "kern", "liga", "clig", "calt";
-    font-feature-settings: "onum", "kern", "liga", "clig", "calt";
     font-size: 100%;
     box-sizing: border-box;
 }
@@ -132,8 +118,8 @@
 .tagline {
     word-spacing: 0.05rem;
     margin-top: .375rem;
-    font-family: 'Kaushan Script', cursive;
-    font-weight: normal;
+    font-family: 'Handlee', cursive;
+    font-weight: 600;
     font-style: normal;
     font-size: .8125rem;
     line-height: 1.5;
@@ -153,6 +139,7 @@ nav {
     border-bottom: 1px solid #916a70;
     padding-top: .75rem;
     padding-bottom: .875rem;
+    
 }
 
 article,
@@ -212,8 +199,8 @@ nav ul li {
     display: inline-block;
     padding-left: .5rem;
     padding-right: .5rem;
-    font-family: 'Kaushan Script', cursive;
-    font-weight: normal;
+    font-family: 'Handlee', cursive;
+    font-weight: 600;
     font-style: normal;
     font-size: 24px;
     line-height: 2.2;
@@ -284,5 +271,5 @@ header div.tagline a:focus {
 }
 
 .text-style {
-    font-family: 'Kaushan Script', cursive;
+    font-family: 'Handlee', cursive;
 }

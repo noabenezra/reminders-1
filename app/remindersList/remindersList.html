@@ -1,23 +1,25 @@
-<div class="container">
+
   <div class="reminder-list">
     <div class="list-group" ng-repeat="reminder in vm.listOfReminders">
       <div class="list-items list-items-position">
-        <div> 
-          <label>
-            Title: 
-          </label>
-           {{reminder.Title}}  </div>
-        <div> 
-            <label>
-                Description:
-              </label>
-           {{reminder.Description}} </div>
-
-        <div>    <label>
-            DueDate:
-          </label>
-           {{reminder.DueDate}} </div>
-      
+        <div>
+          <span class="title-reminder">
+            <label>Title:</label>
+          </span>
+          <span>{{reminder.Title}}</span>
+        </div>
+        <div>
+          <span class="title-reminder">
+            <label>Description:</label>
+          </span>
+          <span>{{reminder.Description}}</span>
+        </div>
+        <div>
+          <span class="title-reminder">
+            <label>DueDate:</label>
+          </span>
+          <span>{{reminder.DueDate}} </span>
+        </div>
         <span class="btns-position">
           <button class="btn-primary text-style">
             <a ng-click="vm.editReminder(reminder.ReminderID)">Edit</a>
@@ -29,6 +31,3 @@
       </div>
     </div>
   </div>
-</div>
-
-

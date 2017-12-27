@@ -9,54 +9,28 @@
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
   <link rel="stylesheet" href="app.css">
-  
   <link href="https://fonts.googleapis.com/css?family=Aclonica|Acme|Archivo+Black|Bad+Script|Berkshire+Swash|Bitter|Boogaloo|Bubblegum+Sans|Carter+One|Caveat|Ceviche+One|Chewy|Cookie|Fredoka+One|Handlee|Indie+Flower|Itim|Kaushan+Script|Merienda|Mukta+Mahee|Nunito|Pangolin|Philosopher|Poiret+One" rel="stylesheet">  
-  
-  
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
     crossorigin="anonymous">
-
 </head>
 
 <body class="begin">
     <header class="row">
-        <div class="small-12 medium-12 large-12 columns">
+        <div class="columns">
           <div class="tagline">
-            <a href="/" style="margin-top: 62px;">By Noa Ben Ezra</a>
+            <a href="/" >By Noa Ben Ezra</a>
           </div>
           <nav>
             <ul>
-              <li><a class="nav-link" ui-sref="remindersList" class="current">Your Reminders</a></li>
+              <li><a class="nav-link" ui-sref="remindersList">Your Reminders</a></li>
               <li><a class="nav-link" ui-sref="addAReminder">Add A New Reminder</a></li>
              
             </ul>
-          </nav>
-          
+          </nav>       
         </div>
       </header>
-
       <div class="view" ui-view></div>
-<!--   
-  <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-    <ul class="nav">
-      <li class="nav-item">
-        <a class="nav-link" ui-sref="remindersList">Reminders</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" ui-sref="addAReminder">Add a Reminder</a>
-      </li>
-    </ul>
-  </nav>
-  <div ui-view></div> -->
-
-
-
-
-
-
-
-
 
   <script src="bower_components/angular/angular.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>

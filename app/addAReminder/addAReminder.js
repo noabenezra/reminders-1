@@ -3,9 +3,17 @@
 var app = angular.module('addAReminder', ['ui.router', 'remindersList', 'ngMaterial'])
 
 app.config(['$stateProvider', function ($stateProvider) {
-  $stateProvider.state('addAReminder',
+  $stateProvider.state('addAReminderWithId',
     {
       url: '/addAReminder/:reminderId',
+      templateUrl: 'addAReminder/addAReminder.html',
+      controller: 'AddAReminderCtrl as vm'
+
+    });
+
+    $stateProvider.state('addAReminder',
+    {
+      url: '/addAReminder',
       templateUrl: 'addAReminder/addAReminder.html',
       controller: 'AddAReminderCtrl as vm'
 
@@ -35,7 +43,6 @@ app.service('reminderServer', function ($http, $mdToast, $q) {
     $http({
       method: 'GET',
       url: '//localhost/Reminders/api/values',
-      /* params:{title: title, description: description, dueDate:dueDate}*/
     }).then(function successCallback(response) {
       defer.resolve(response);
     }, function errorCallback(response) {
@@ -59,14 +66,12 @@ app.service('reminderServer', function ($http, $mdToast, $q) {
   }
 
   this.addOrUpdateAReminder = function (reminderId, title, description, dueDate) {
-    debugger;
     var defer = $q.defer();
     $http({
       method: 'POST',
       url: '//localhost/Reminders/api/values/update',
       params: { reminderId: reminderId, title: title, description: description, dueDate: dueDate }
     }).then(function successCallback(response) {
-      debugger;
       defer.resolve(response);
     }, function errorCallback(response) {
       defer.reject(response);

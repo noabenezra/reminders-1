@@ -48,6 +48,10 @@ app.controller('FuncCtrl', function () {
  
    };
 
+
+   var urls = ['google.com', 'ynet.co.il', 'walla.co.il']
+
+
    func1().then(function () {
      return func2();
    }).then(function () { 
