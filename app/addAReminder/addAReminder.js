@@ -11,7 +11,7 @@ app.config(['$stateProvider', function ($stateProvider) {
 
     });
 
-    $stateProvider.state('addAReminder',
+  $stateProvider.state('addAReminder',
     {
       url: '/addAReminder',
       templateUrl: 'addAReminder/addAReminder.html',
@@ -24,19 +24,21 @@ app.config(['$stateProvider', function ($stateProvider) {
 
 app.service('reminderServer', function ($http, $mdToast, $q) {
 
-   this.deleteReminder = function (reminderId) {debugger;  
+  this.deleteReminder = function (reminderId) {
+    debugger;
     var defer = $q.defer();
-     $http({
-       method: 'POST',
-       url: '//localhost/Reminders/api/values/7',
-       params: { reminderId: reminderId}
-     }).then(function successCallback(response) {debugger;
+    $http({
+      method: 'POST',
+      url: '//localhost/Reminders/api/values/7',
+      params: { reminderId: reminderId }
+    }).then(function successCallback(response) {
+      debugger;
       defer.resolve(response);
-     }, function errorCallback(response) {
+    }, function errorCallback(response) {
       defer.reject(response);
-     });
-     return defer.promise;
-   }
+    });
+    return defer.promise;
+  }
 
   this.getReminders = function () {
     var defer = $q.defer();
@@ -85,7 +87,7 @@ app.service('reminderServer', function ($http, $mdToast, $q) {
 
 
 
-app.controller('AddAReminderCtrl', function (reminderServer, $stateParams, $mdToast) {
+app.controller('AddAReminderCtrl', function (reminderServer, $stateParams, $mdToast, $state) {
   var vm = this;
   vm.reminderId = null;
   vm.reminder = { title: "", description: "", duedate: "" };
@@ -107,16 +109,20 @@ app.controller('AddAReminderCtrl', function (reminderServer, $stateParams, $mdTo
     if ($stateParams.reminderId) {
       reminderServer.addOrUpdateAReminder($stateParams.reminderId, vm.reminder.title, vm.reminder.description, vm.reminder.duedate).then(function (resp) {
         $mdToast.show($mdToast.simple().textContent('Reminder has been Edited!'));
+        $stateParams.reminderId = null;
+        $state.go('remindersList');
       });
     }
     else {
       reminderServer.addOrUpdateAReminder(null, vm.reminder.title, vm.reminder.description, vm.reminder.duedate).then(function (resp) {
         $mdToast.show($mdToast.simple().textContent('Reminder has been added!'));
+        $state.go('remindersList');
       });
     }
     vm.reminder.title = '';
     vm.reminder.description = '';
     vm.reminder.duedate = '';
+
   };
 
 });
