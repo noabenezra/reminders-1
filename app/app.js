@@ -5,7 +5,8 @@ angular.module('myApp', [
   'remindersList',
   'addAReminder',
   'ui.router',
-  'ngMaterial'
+  'ngMaterial',
+  'func'
 ]).
   config(['$locationProvider', '$stateProvider', '$urlRouterProvider', function ($locationProvider, $stateProvider, $urlRouterProvider) {
     $locationProvider.hashPrefix('!');
